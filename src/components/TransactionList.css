@@ -1,0 +1,28 @@
+.transaction-list-container {
+    margin: 20px 0;
+}
+
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-item {
+    
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.amount-in {
+    color: #2ecc71;
+    font-weight: bold;
+
+}
+
+.amount-out {
+    color: #c0392b;
+    font-weight: bold;
+}
