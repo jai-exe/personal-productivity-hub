@@ -1,45 +1,26 @@
 import React, { useState } from 'react';
-import TransactionList from './components/TransactionList.jsx';
-import AddTransactionForm from './components/AddTransactionForm.jsx';
+import MoneyTab from './components/MoneyTab.jsx';
+import Navigation from './components/Navigation.jsx';
 import './App.css';
 
-const fakeData = [
-    {title: 'Groceries', amount: 50.75, type: 'out'},
-    {title: 'Paycheque', amount: 1200, type: 'in'},
-    {title: 'Dinner', amount: 85.50, type: 'out'}
-];
-
 function App() {
-
-  const [transactions, setTransactions] = useState(fakeData);
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const handleAddTransaction = (newTransaction) => {
-        
-        setTransactions([...transactions, newTransaction]);
-        setIsFormVisible(false);
-    }
+  const [activeTab, setActiveTab] = useState('money'); // Default to 'money' tab
 
   return (
     <div className="app-container">
-      <h1>Personal Productivity Hub</h1>
-
-
-      <TransactionList transactions={transactions} />
-
-      <button className="add-button" onClick={() => setIsFormVisible(true)}>+</button>
-
-      {isFormVisible && (
-        <AddTransactionForm 
-          onCancel={() => setIsFormVisible(false)}
-          onAddTransaction={handleAddTransaction} 
-        />
-      )}
-
-
+      <header className="app-header">
+        <h1>Personal Productivity Hub</h1>
+      </header>
+      
+      <main>
+        {/* Conditionally render the component based on the active tab */}
+        {activeTab === 'money' && <MoneyTab />}
+        {activeTab === 'habit' && <h2>Habit Tracker Coming Soon!</h2>}
+      </main>
+      
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   );
-
 }
 
-export default App
+export default App;

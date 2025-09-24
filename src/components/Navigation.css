@@ -1,0 +1,25 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.bottom-nav button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #888;
+}
+
+.bottom-nav button.active {
+  color: #007bff;
+  font-weight: bold;
+}
