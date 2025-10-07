@@ -13,6 +13,8 @@
 
 .transaction-form {
     background: white;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 25px;
     border-radius: 8px;
     display: flex;
@@ -35,7 +37,7 @@
 
 .transaction-form input,
 .transaction-form select {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;

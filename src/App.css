@@ -1,4 +1,36 @@
-.body {
-  color: #fff;
+body {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vw;
+}
+
+ul {
+  padding: 0;
+}
+
+.app-container {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 
 }
+
+.app-title {
+  font-size: 24px;
+}
+
+.add-button {
+  float: right;
+}
+
+.add-transaction-button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.form-label {
+  text-align: left;
+}
+

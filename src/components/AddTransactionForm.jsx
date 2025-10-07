@@ -13,13 +13,13 @@ const AddTransactionForm = ({ onCancel, onAddTransaction }) => {
             return;
         }
 
-        const newTransaction = {
+        const newTransactionData = {
             title: title,
             amount: parseFloat(amount),
             type: type,
         };
 
-        onAddTransaction(newTransaction);
+        onAddTransaction(newTransactionData);
     };
 
     return (
@@ -27,7 +27,7 @@ const AddTransactionForm = ({ onCancel, onAddTransaction }) => {
             <form onSubmit={handleSubmit} className="transaction-form">
                 <h3>Record Transaction</h3>
 
-                <label>Title</label>
+                <label className="form-label">Title</label>
                 <input
                     type="text"
                     placeholder="eg. Coffee"
@@ -35,7 +35,7 @@ const AddTransactionForm = ({ onCancel, onAddTransaction }) => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
 
-                <label>Amount</label>
+                <label className="form-label">Amount</label>
                 <input
                     type="number"
                     placeholder="eg. 6.25"
@@ -43,15 +43,15 @@ const AddTransactionForm = ({ onCancel, onAddTransaction }) => {
                     onChange={(e) => setAmount(e.target.value)}
                 />
 
-                <label>Type</label>
+                <label className="form-label">Type</label>
                 <select value={type} onChange={(e) => setType(e.target.value)}>
                     <option>Money Out (Expense)</option>
                     <option>Money In (Income)</option>
                 </select>
 
                 <div className="form-buttons">
-                    <button type="submit">Add</button>
-                    <button type="button" onClick={onCancel}>Cancel</button>
+                    <button type="submit" className="add-transaction-button">Add</button>
+                    <button type="button" className="add-transaction-button" onClick={onCancel}>Cancel</button>
                 </div>
 
             </form>
